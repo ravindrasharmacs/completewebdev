@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout Examples</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .flex-container {
+            display: flex;
+            margin-bottom: 30px;
+            background-color: #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .flex-item {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        #basic-row {
+            /* Default flex-direction is row */
+        }
+
+        #justify-content {
+            justify-content: space-between;
+        }
+
+        #align-items {
+            height: 150px;
+            align-items: center;
+        }
+
+        #flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        #flex-grow .flex-item {
+            flex-grow: 1;
+        }
+
+        #flex-grow .flex-item:nth-child(2) {
+            flex-grow: 2;
+        }
+
+        #flex-basis .flex-item {
+            flex-basis: 200px;
+        }
+
+        #flex-shrink .flex-item {
+            flex-shrink: 1;
+            width: 200px;
+        }
+
+        #flex-shrink .flex-item:nth-child(2) {
+            flex-shrink: 2;
+        }
+
+        #nested {
+            flex-direction: column;
+        }
+
+        #nested .nested-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 600px) {
+            #flex-wrap, #flex-basis, #flex-shrink {
+                flex-direction: column;
+            }
+
+            #flex-basis .flex-item, #flex-shrink .flex-item {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Flex Layout Examples</h1>
+
+        <h2>Basic Row Layout</h2>
+        <div class="flex-container" id="basic-row">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h2>Justify Content: Space Between</h2>
+        <div class="flex-container" id="justify-content">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h2>Align Items: Center</h2>
+        <div class="flex-container" id="align-items">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h2>Flex Wrap</h2>
+        <div class="flex-container" id="flex-wrap">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+            <div class="flex-item">Item 4</div>
+            <div class="flex-item">Item 5</div>
+        </div>
+
+        <h2>Flex Grow</h2>
+        <div class="flex-container" id="flex-grow">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2 (grows twice as much)</div>
+            <div class="flex-item">3</div>
+        </div>
+
+        <h2>Flex Basis</h2>
+        <div class="flex-container" id="flex-basis">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h2>Flex Shrink</h2>
+        <div class="flex-container" id="flex-shrink">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2 (shrinks twice as fast)</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h2>Nested Flex Containers</h2>
+        <div class="flex-container" id="nested">
+            <div class="nested-row">
+                <div class="flex-item">Row 1, Item 1</div>
+                <div class="flex-item">Row 1, Item 2</div>
+            </div>
+            <div class="nested-row">
+                <div class="flex-item">Row 2, Item 1</div>
+                <div class="flex-item">Row 2, Item 2</div>
+                <div class="flex-item">Row 2, Item 3</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
